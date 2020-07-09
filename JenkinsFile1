@@ -1,0 +1,10 @@
+node{
+stage("BuildProject")
+{
+bat 'mvn clean package'
+}
+stage("archive artifacts" )
+{
+archiveArtifacts artifacts : '**/*.war'
+}
+}
